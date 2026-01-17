@@ -22,7 +22,7 @@ enum BME280_P {
 /**
  * BME280 block
  */
-//% weight=100 color=#70c0f0 icon="\uf042" block="BME280"
+//% weight=100 color=#70c0f0 icon="\uf2c9" block="BME280"
 namespace BME280 {
     let BME280_I2C_ADDR = BME280_I2C_ADDRESS.ADDR_0x76
 
