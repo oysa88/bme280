@@ -7,8 +7,6 @@
         "microphone": "*"
     },
     "files": [
-        "main.blocks",
-        "main.ts",
         "README.md",
         "BME280.ts"
     ],
@@ -22,5 +20,5 @@
     "supportedTargets": [
         "microbit"
     ],
-    "preferredEditor": "blocksprj"
+    "preferredEditor": "tsprj"
 }
