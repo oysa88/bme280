@@ -149,6 +149,7 @@ namespace BME280 {
      * power on
      */
     //% blockId="BME280_POWER_ON" block="Skru PÅ"
+    //% group="Oppsett"
     //% weight=22 blockGap=8
     export function PowerOn() {
         setreg(0xF4, 0x2F)
@@ -158,6 +159,7 @@ namespace BME280 {
      * power off
      */
     //% blockId="BME280_POWER_OFF" block="Skru AV"
+    //% group="Oppsett"
     //% weight=21 blockGap=8
     export function PowerOff() {
         setreg(0xF4, 0)
@@ -178,6 +180,7 @@ namespace BME280 {
      * Pressure below Event
      */
     //% block="Trykk lavere enn %dat" dat.defl=100000
+    //% group="Hendelser"
     export function PressureBelowThan(dat: number, body: () => void): void {
         control.inBackground(function () {
             while (true) {
@@ -194,6 +197,7 @@ namespace BME280 {
      * Pressure higher Event
      */
     //% block="Trykk høyere enn %dat" dat.defl=100000
+    //% group="Hendelser"
     export function PressureHigherThan(dat: number, body: () => void): void {
         control.inBackground(function () {
             while (true) {
@@ -210,6 +214,7 @@ namespace BME280 {
      * humidity below Event
      */
     //% block="Luftfuktighet lavere enn %dat" dat.defl=10
+    //% group="Hendelser"
     export function HumidityBelowThan(dat: number, body: () => void): void {
         control.inBackground(function () {
             while (true) {
@@ -226,6 +231,7 @@ namespace BME280 {
      * humidity higher Event
      */
     //% block="Luftfuktighet høyere enn %dat" dat.defl=50
+    //% group="Hendelser"
     export function HumidityHigherThan(dat: number, body: () => void): void {
         control.inBackground(function () {
             while (true) {
@@ -242,6 +248,7 @@ namespace BME280 {
      * temperature below Event
      */
     //% block="Temperatur lavere enn %dat" dat.defl=10
+    //% group="Hendelser"
     export function TemperatureBelowThan(dat: number, body: () => void): void {
         control.inBackground(function () {
             while (true) {
@@ -258,6 +265,7 @@ namespace BME280 {
      * temperature higher Event
      */
     //% block="Temperatur høyere enn %dat" dat.defl=30
+    //% group="Hendelser"
     export function TemperatureHigherThan(dat: number, body: () => void): void {
         control.inBackground(function () {
             while (true) {
@@ -274,6 +282,7 @@ namespace BME280 {
      * set I2C address
      */
     //% blockId="BME280_SET_ADDRESS" block="Sett adresse %addr"
+    //% group="Oppsett"
     //% weight=20 blockGap=8
     export function Address(addr: BME280_I2C_ADDRESS) {
         BME280_I2C_ADDR = addr
