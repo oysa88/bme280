@@ -23,6 +23,7 @@ enum BME280_P {
  * BME280 block
  */
 //% weight=40 color=#70c0f0 icon="\uf2c9" block="BME280"
+//% groups=["Målinger", "Hendelser", "Oppsett"]
 namespace BME280 {
     let BME280_I2C_ADDR = BME280_I2C_ADDRESS.ADDR_0x76
 
@@ -113,7 +114,8 @@ namespace BME280 {
      * get pressure
      */
     //% blockId="BME280_GET_PRESSURE" block="Trykk %u"
-    //% weight=80 blockGap=8
+    //% group="Målinger"
+    //% weight=79 blockGap=8
     export function pressure(u: BME280_P): number {
         get();
         if (u == BME280_P.Pa) return P;
@@ -124,6 +126,7 @@ namespace BME280 {
      * get temperature
      */
     //% blockId="BME280_GET_TEMPERATURE" block="Temperatur %u"
+    //% group="Målinger"
     //% weight=80 blockGap=8
     export function temperature(u: BME280_T): number {
         get();
@@ -135,7 +138,8 @@ namespace BME280 {
      * get humidity
      */
     //% blockId="BME280_GET_HUMIDITY" block="Luftfuktighet"
-    //% weight=80 blockGap=8
+    //% group="Målinger"
+    //% weight=78 blockGap=8
     export function humidity(): number {
         get();
         return H;
@@ -163,7 +167,8 @@ namespace BME280 {
      * Calculate Dewpoint
      */
     //% block="Duggpunkt"
-    //% weight=60 blockGap=8
+    //% group="Målinger"
+    //% weight=76 blockGap=8
     export function Dewpoint(): number {
         get();
         return T - Math.idiv(100 - H, 5)
