@@ -1,6 +1,6 @@
 {
     "name": "BME280",
-    "description": "",
+    "description": "BME280 - Sensor for å måle Trykk, Temperatur, Fuktighet og Duggpunkt. Bibliotek for micro:bit.",
     "dependencies": {
         "core": "*",
         "radio": "*",
