@@ -85,7 +85,7 @@ namespace BME280 {
         let var1 = (((adc_T >> 3) - (dig_T1 << 1)) * dig_T2) >> 11
         let var2 = (((((adc_T >> 4) - dig_T1) * ((adc_T >> 4) - dig_T1)) >> 12) * dig_T3) >> 14
         let t = var1 + var2
-        T = Math.idiv((t * 5 + 128) >> 8, 100)
+        T = Math.idiv((t * 5 + 128) >> 8, 10)
         var1 = (t >> 1) - 64000
         var2 = (((var1 >> 2) * (var1 >> 2)) >> 11) * dig_P6
         var2 = var2 + ((var1 * dig_P5) << 1)
