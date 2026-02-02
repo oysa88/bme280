@@ -85,7 +85,8 @@ namespace BME280 {
         let var1 = (((adc_T >> 3) - (dig_T1 << 1)) * dig_T2) >> 11
         let var2 = (((((adc_T >> 4) - dig_T1) * ((adc_T >> 4) - dig_T1)) >> 12) * dig_T3) >> 14
         let t = var1 + var2
-        T = Math.idiv((t * 5 + 128) >> 8, 100)
+        let T_x100 = (t * 5 + 128) >> 8   // 0.01 °C
+        T = Math.idiv(T_x100, 10)         // 0.1 °C lagres i T
         var1 = (t >> 1) - 64000
         var2 = (((var1 >> 2) * (var1 >> 2)) >> 11) * dig_P6
         var2 = var2 + ((var1 * dig_P5) << 1)
@@ -130,8 +131,8 @@ namespace BME280 {
     //% weight=80 blockGap=8
     export function temperature(u: BME280_T): number {
         get();
-        if (u == BME280_T.T_C) return T;
-        else return 32 + Math.idiv(T * 9, 5)
+        if (u == BME280_T.T_C) return T / 10;
+        else return 32 + (T / 10) * 9 / 5;
     }
 
     /**
@@ -173,7 +174,8 @@ namespace BME280 {
     //% weight=76 blockGap=8
     export function Dewpoint(): number {
         get();
-        return T - Math.idiv(100 - H, 5)
+        let tempC = T / 10          // gjør om fra tidels grader til °C
+        return tempC - (100 - H) / 5
     }
 
     /**
