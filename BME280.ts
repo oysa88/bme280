@@ -25,7 +25,7 @@ enum BME280_P {
 //% weight=40 color=#70c0f0 icon="\uf2c9" block="BME280"
 //% groups=["Målinger", "Hendelser", "Oppsett"]
 namespace BME280 {
-    let BME280_I2C_ADDR = BME280_I2C_ADDRESS.ADDR_0x76
+    let BME280_I2C_ADDR = BME280_I2C_ADDRESS.ADDR_0x77
 
     function setreg(reg: number, dat: number): void {
         let buf = pins.createBuffer(2);
